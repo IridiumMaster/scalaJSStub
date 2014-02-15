@@ -11,7 +11,7 @@ version := "0.1-SNAPSHOT"
 libraryDependencies ++= Seq(
     "org.scala-lang.modules.scalajs" %% "scalajs-jquery" % "0.1-SNAPSHOT",
     "org.scala-lang.modules.scalajs" %% "scalajs-dom" % "0.1-SNAPSHOT",
-    "org.scala-lang.modules.scalajs" %% "scalajs-jasmine-test-framework" % "0.3" % "test",
+    "org.scala-lang.modules.scalajs" %% "scalajs-jasmine-test-framework" % scalaJSVersion % "test",
     "org.webjars" % "envjs" % "1.2" % "test"    
 )
 
