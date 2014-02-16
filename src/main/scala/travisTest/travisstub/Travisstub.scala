@@ -8,6 +8,7 @@ object Travisstub {
     val paragraph = g.document.createElement("p")
     paragraph.innerHTML = "<strong>It works!</strong>"
     g.document.getElementById("playground").appendChild(paragraph)
+    new travisObject
   }
 
   /** Computes the square of an integer.
