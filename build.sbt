@@ -1,12 +1,14 @@
 // Turn this project into a Scala.js project by importing these settings
+import scala.scalajs.sbtplugin.ScalaJSPlugin._
+import ScalaJSKeys._
+import scala.js.workbench.Plugin._
+
 scalaJSSettings
 
 name := "travisStub"
 
 version := "0.1-SNAPSHOT"
 
-// Replace the current dependency with this one to get a working test result. 
-//    "org.scala-lang.modules.scalajs" %% "scalajs-jasmine-test-framework" % scalaJSVersion % "test"
 
 libraryDependencies ++= Seq(
     "org.scala-lang.modules.scalajs" %% "scalajs-jquery" % "0.3-SNAPSHOT",
@@ -19,3 +21,12 @@ libraryDependencies ++= Seq(
 
 unmanagedSources in (Compile, ScalaJSKeys.packageJS) +=
     baseDirectory.value / "js" / "startup.js"
+
+ScalaJSKeys.packageJS in Compile := {
+  (ScalaJSKeys.packageJS in Compile).value :+ generateClient.value
+}
+
+bootSnippet := "ScalaJS.modules.travisTest.travisstub_Travisstub().main();"
+
+updateBrowsers <<= updateBrowsers.triggeredBy(ScalaJSKeys.packageJS in Compile)
+    
