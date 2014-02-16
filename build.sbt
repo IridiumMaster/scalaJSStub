@@ -5,6 +5,8 @@ import scala.js.workbench.Plugin._
 
 scalaJSSettings
 
+buildSettingsX
+
 name := "travisStub"
 
 version := "0.1-SNAPSHOT"
