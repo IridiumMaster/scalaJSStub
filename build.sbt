@@ -18,10 +18,4 @@ libraryDependencies ++= Seq(
 // Specify additional .js file to be passed to package-js and optimize-js
 
 unmanagedSources in (Compile, ScalaJSKeys.packageJS) +=
-    baseDirectory.value / "js" / "jquery-2.1.0.js"
-
-unmanagedSources in (Compile, ScalaJSKeys.packageJS) +=
-    baseDirectory.value / "js" / "travisObject.js"
-
-unmanagedSources in (Compile, ScalaJSKeys.packageJS) +=
     baseDirectory.value / "js" / "startup.js"
